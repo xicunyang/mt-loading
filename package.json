@@ -1,21 +1,38 @@
 {
   "name": "mt-loading",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.1",
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "lib": "cross-env LIB=lib webpack"
   },
+  "keywords": [
+    "mt-loading"
+  ],
   "dependencies": {
     "vue": "^2.6.11"
   },
   "devDependencies": {
     "@vue/cli-service": "~4.3.0",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "style-loader": "^1.2.1",
+    "webpack-cli": "^3.3.11",
+    "css-loader": "^3.5.3",
+    "@babel/core": "^7.9.6",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^7.0.2"
   },
   "browserslist": [
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "files": [
+    "lib/",
+    "package.json",
+    "README.md"
+  ],
+  "main": "lib/mt-loading.js"
 }
