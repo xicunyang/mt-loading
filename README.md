@@ -1,6 +1,6 @@
 # mt-loading
 
-> 自定义指令 - 局部loading
+> vue 自定义指令 - 局部loading
 
 <br/>
 
@@ -11,7 +11,7 @@ npm仓库地址 : [自定义指令 - 局部loading](https://www.npmjs.com/packag
 <br/>
 
 ## 看下到底是个啥
-![mt-loading.gif](https://upload-images.jianshu.io/upload_images/6555843-4737602217314ddf.gif?imageMogr2/auto-orient/strip)
+![mt-loading.gif](https://bj-mutou-1301404888.cos.ap-beijing.myqcloud.com/cdn/mutou-works/mt-loading.gif)
 <br/>
 
 ## 用起来！兄弟萌！
