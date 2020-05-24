@@ -21,5 +21,5 @@ if(typeof window !== 'undefined' && window.Vue){
 // 导出
 export default {
     install,
-    ...directives
+    // ...directives
 }

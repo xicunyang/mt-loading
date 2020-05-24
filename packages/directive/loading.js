@@ -20,32 +20,22 @@
   }
   // 弹跳动画
   function setAnimateBounce(loadingWarp){
-    let bounce1 = document.createElement('div')
-    let bounce2 = document.createElement('div')
-    bounce1.className = 'bounce bounce1'
-    bounce2.className = 'bounce bounce2'
     let fm = document.createDocumentFragment()
-
-    fm.appendChild(bounce1)
-    fm.appendChild(bounce2)
-
+    for(let i=1;i<=2;i++){
+      let bounce = document.createElement('div')
+      bounce.className = `bounce bounce${i} mt-loading-color`
+      fm.appendChild(bounce)
+    }
     loadingWarp.appendChild(fm)
   }
   // 移动动画
   function setAnimateMove(loadingWarp){
-    let span1 = document.createElement('span')
-    let span2 = document.createElement('span')
-    let span3 = document.createElement('span')
-    let span4 = document.createElement('span')
-    let span5 = document.createElement('span')
-
     let fm = document.createDocumentFragment()
-    fm.appendChild(span1)
-    fm.appendChild(span2)
-    fm.appendChild(span3)
-    fm.appendChild(span4)
-    fm.appendChild(span5)
-
+    for(let i=0;i<5;i++){
+      let span = document.createElement('span')
+      span.className = ' mt-loading-color'
+      fm.appendChild(span)
+    }
     loadingWarp.appendChild(fm)
   }
 
@@ -79,8 +69,11 @@
            addMask(el,animate)
          }
       },
-      componentUpdated: function(el, binding, vnode, oldVnode){
+      update: function(el, binding, vnode, oldVnode){
         let animate = Object.keys(binding.modifiers)[0]
+        // 该update函数是当vnode更新就会被触发，可能我们的值没有更新，就会造成重复渲染的问题
+        // 在这里处理一下
+        if(binding.oldValue === binding.value) return
         if(binding.value){
           // 显示
           addMask(el,animate)
